@@ -25,6 +25,9 @@
 -  venv 디렉토리는 Git에 포함되지 X
     ```
     venv/
+    __pycache__/
+    *.pyc
+    *.sqlite3
     ```
 
 4. 관리자 계정
