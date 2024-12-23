@@ -1,0 +1,35 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>동아리 관리 시스템</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'index' %}">SPAM 관리</a>
+            <div class="navbar-nav">
+                {% if user.is_authenticated %}
+                    <a class="nav-link" href="{% url 'todo' %}">To-Do</a>
+                    <a class="nav-link" href="{% url 'check' %}">출석체크</a>
+                    {% if user.is_teacher %}
+                        <a class="nav-link" href="{% url 'teacher' %}">학생 출석현황</a>
+                    {% endif %}
+                    <a class="nav-link" href="{% url 'logout' %}">로그아웃</a>
+                {% else %}
+                    <a class="nav-link" href="{% url 'login' %}">로그인</a>
+                    <a class="nav-link" href="{% url 'register' %}">회원가입</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container mt-4">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
