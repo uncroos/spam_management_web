@@ -1,0 +1,22 @@
+<!-- templates/check.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>출석체크</h2>
+
+{% if already_checked %}
+    <div class="alert alert-info">오늘 이미 출석체크를 하셨습니다.</div>
+{% else %}
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">출석체크하기</button>
+    </form>
+{% endif %}
+
+<h3 class="mt-4">출석 기록</h3>
+<ul class="list-group">
+    {% for attendance in attendances %}
+    <li class="list-group-item">{{ attendance.date|date:"Y-m-d" }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
