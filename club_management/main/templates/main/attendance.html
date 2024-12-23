@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="max-w-2xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4">출석체크</h2>
+    
+    {% if not today_attendance %}
+    <form method="post" class="mb-6">
+        {% csrf_token %}
+        <button type="submit" 
+                class="bg-blue-500 text-white px-4 py-2 rounded">
+            오늘 출석하기
+        </button>
+    </form>
+    {% else %}
+    <p class="mb-6 text-green-600">오늘은 이미 출석체크를 하셨습니다!</p>
+    {% endif %}
+
+    <div class="bg-white rounded shadow">
+        <table class="w-full">
+            <thead>
+                <tr class="border-b">
+                    <th class="px-4 py-2">날짜</th>
+                    <th class="px-4 py-2">상태</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in attendance %}
+                <tr class="border-b">
+                    <td class="px-4 py-2">{{ record.date }}</td>
+                    <td class="px-4 py-2 text-green-600">출석</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
