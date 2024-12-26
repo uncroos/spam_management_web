@@ -1,14 +1,19 @@
-
-<!-- templates/teacher.html -->
 {% extends 'base.html' %}
 
 {% block content %}
 <h2>학생 출석현황</h2>
 
+<div class="alert alert-info">
+    선생님 코드: <strong>{{ teacher_code }}</strong>
+    <br>
+    <small>이 코드를 학생들에게 공유하여 가입하도록 해주세요.</small>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th>학생 이름</th>
+            <th>연락처</th>
             <th>오늘 출석여부</th>
         </tr>
     </thead>
@@ -16,6 +21,7 @@
         {% for student, attended in attendance_data.items %}
         <tr>
             <td>{{ student.first_name }}</td>
+            <td>{{ student.phone_number }}</td>
             <td>
                 {% if attended %}
                     <span class="badge bg-success">출석</span>

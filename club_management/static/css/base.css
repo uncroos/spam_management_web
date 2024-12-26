@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'InriaSerif';
+    src: url("../font/InriaSerif-Bold.ttf");
+}
+
+body {
+    font-family: 'InriaSerif', serif;
+}
+
+.navbar {
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 16px;
+    margin-right: 15px;
+}
+
+.navbar-nav .nav-link:last-child {
+    margin-right: 0;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 30px; /* 작은 화면에서 이미지 크기 조정 */
+    }
+    .navbar-nav .nav-link {
+        font-size: 14px; /* 텍스트 크기 축소 */
+        margin-right: 10px; /* 여백 축소 */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-nav {
+        flex-direction: column; /* 메뉴를 세로로 배치 */
+        text-align: center; /* 가운데 정렬 */
+    }
+    .navbar-nav .nav-link {
+        margin-right: 0; /* 세로 배치 시 오른쪽 여백 제거 */
+        margin-bottom: 10px; /* 아래쪽 여백 추가 */
+    }
+    .navbar-brand img {
+        height: 25px; /* 작은 화면에서 이미지 크기 추가 조정 */
+    }
+}

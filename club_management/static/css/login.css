@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'InriaSerif';
+    src: url('../font/InriaSerif-Bold.ttf');
+}
+
+body {
+    font-family: 'InriaSerif', serif;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.login-container {
+    margin-top: 100px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #444;
+}

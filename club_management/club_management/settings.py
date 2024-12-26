@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'club.apps.ClubConfig',  # 새로 생성한 앱 등록
+    'club.apps.ClubConfig',
 ]
 
 MIDDLEWARE = [

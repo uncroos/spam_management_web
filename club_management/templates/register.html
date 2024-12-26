@@ -1,12 +1,16 @@
-<!-- templates/register.html -->
 {% extends 'base.html' %}
 
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-6">
         <h2>회원가입</h2>
+        <div class="mb-3">
+            <a href="?type=teacher" class="btn btn-{% if user_type == 'teacher' %}primary{% else %}outline-primary{% endif %} me-2">선생님</a>
+            <a href="?type=student" class="btn btn-{% if user_type == 'student' %}primary{% else %}outline-primary{% endif %}">학생</a>
+        </div>
         <form method="post">
             {% csrf_token %}
+            <input type="hidden" name="user_type" value="{{ user_type }}">
             {{ form.as_p }}
             <button type="submit" class="btn btn-primary">가입하기</button>
         </form>
