@@ -5,7 +5,7 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-your-secret-key'  # 실제 배포시에는 변경해야 합니다
+SECRET_KEY = ''
 
 DEBUG = True
 

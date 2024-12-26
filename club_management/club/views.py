@@ -136,12 +136,12 @@ def student_detail(request, student_id):
     
     student = get_object_or_404(User, id=student_id, teacher=request.user, is_teacher=False)
     
-    # 최근 30일 출석 기록 필터링
+    # 최근 30일 출석 기록
     recent_30_days = timezone.now().date() - timedelta(days=30)
     attendance_history = Attendance.objects.filter(user=student, date__gte=recent_30_days).order_by('-date')
     todos = Todo.objects.filter(user=student).order_by('-created_at')
     
-    # 출석률 계산 (최근 30일 기준)
+    # 출석률 계산
     total_days = 30
     attended_days = attendance_history.count()
     attendance_rate = (attended_days / total_days) * 100 if total_days > 0 else 0

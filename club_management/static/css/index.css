@@ -3,6 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* 화면 전체 높이 기준 중앙 정렬 */
+    min-height: 100vh;
     text-align: center;
 }
